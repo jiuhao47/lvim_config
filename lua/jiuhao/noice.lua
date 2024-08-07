@@ -28,6 +28,7 @@ table.insert(lvim.plugins,
 )
 
 require("noice").setup({
+  stages="static",
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {

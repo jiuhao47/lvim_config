@@ -10,7 +10,12 @@
     DONE: aerial?
     DONE: ftplugin:filetype plugin
     PERF: copilot-cmp: at the head of line,how to set the cmp trigger?
-    FIX: terminal slow?
+    DONE: terminal slow?
     TODO: dap/navigate-virtual-text
+    TODO: markdown preview
+    DONE: auto-save
+    DONE: comment
+    TODO: 括号检测word自动添加（这个应该可以简易实现）
+    TODO: trouble
+    TODO: leap
 -->
-
