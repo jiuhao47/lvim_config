@@ -19,3 +19,4 @@ local personal_keybindings = {
 for key, value in pairs(personal_keybindings) do
   wk[key] = value
 end
+
