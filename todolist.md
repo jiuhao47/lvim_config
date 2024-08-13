@@ -18,4 +18,8 @@
     TODO: 括号检测word自动添加（这个应该可以简易实现）
     TODO: trouble
     TODO: leap
+    PERF: tex cmp has some error and warning , and sorting priority
+    DONE: tex compile,tex key,tex preview
+    PERF: tex lsp: how to make it live
+    PERF: tex preview delete manage
 -->
