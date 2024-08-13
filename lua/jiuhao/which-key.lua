@@ -12,7 +12,9 @@ local personal_keybindings = {
     s = { "<cmd>SessionManager! load_session<cr>", "SessionManager" },
     l = { "<cmd>Lazy<cr>", "Show Lazy Panel" },
     h = { "<cmd>nohlsearch<cr>", "No Highlight" },
-    t = { "<cmd>lua require 'lvim.core.terminal' .htop_toggle()<cr>","Htop Toggle"}
+    t = { "<cmd>lua require 'lvim.core.terminal' .htop_toggle()<cr>", "Htop Toggle" },
+    d = { "<cmd>lua require 'lvim.core.terminal' .lazydocker_toggle()<cr>", "LazyDocker Toggle" },
+    n = { "<cmd>lua require 'lvim.core.terminal' .ncdu_toggle()<cr>" ,"Ncdu Toggle"}
   },
   t = {
     name = "LaTex",

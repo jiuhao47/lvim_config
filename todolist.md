@@ -22,4 +22,5 @@
     DONE: tex compile,tex key,tex preview
     PERF: tex lsp: how to make it live
     PERF: tex preview delete manage
+    DONE: htop,lazydocker,ncdu toggle
 -->
