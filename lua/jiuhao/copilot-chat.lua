@@ -1,24 +1,34 @@
 local IS_DEV = false
+local IN_CHINESE = ", please reply in Chinese."
+local USE_CHINESE =  true-- 新增变量，用于控制是否使用中文模式
+
+local function get_prompt(prompt)
+  if USE_CHINESE then
+    return prompt .. IN_CHINESE
+  else
+    return prompt
+  end
+end
 
 local prompts = {
   -- Code related prompts
-  Explain = "Please explain how the following code works.",
-  Review = "Please review the following code and provide suggestions for improvement.",
-  Tests = "Please explain how the selected code works, then generate unit tests for it.",
-  Refactor = "Please refactor the following code to improve its clarity and readability.",
-  FixCode = "Please fix the following code to make it work as intended.",
-  FixError = "Please explain the error in the following text and provide a solution.",
-  BetterNamings = "Please provide better names for the following variables and functions.",
-  Documentation = "Please provide documentation for the following code.",
-  SwaggerApiDocs = "Please provide documentation for the following API using Swagger.",
-  SwaggerJsDocs = "Please write JSDoc for the following API using Swagger.",
+  Explain = get_prompt("Please explain how the following code works."),
+  Review = get_prompt("Please review the following code and provide suggestions for improvement."),
+  Tests = get_prompt("Please explain how the selected code works, then generate unit tests for it."),
+  Refactor = get_prompt("Please refactor the following code to improve its clarity and readability."),
+  FixCode = get_prompt("Please fix the following code to make it work as intended."),
+  FixError = get_prompt("Please explain the error in the following text and provide a solution."),
+  BetterNamings = get_prompt("Please provide better names for the following variables and functions."),
+  Documentation = get_prompt("Please provide documentation for the following code."),
+  SwaggerApiDocs = get_prompt("Please provide documentation for the following API using Swagger."),
+  SwaggerJsDocs = get_prompt("Please write JSDoc for the following API using Swagger."),
   -- Text related prompts
-  Summarize = "Please summarize the following text.",
-  Spelling = "Please correct any grammar and spelling errors in the following text.",
-  Wording = "Please improve the grammar and wording of the following text.",
-  Concise = "Please rewrite the following text to make it more concise.",
+  Summarize = get_prompt("Please summarize the following text."),
+  Spelling = get_prompt("Please correct any grammar and spelling errors in the following text."),
+  Wording = get_prompt("Please improve the grammar and wording of the following text."),
+  Concise = get_prompt("Please rewrite the following text to make it more concise."),
 }
-
+local username = os.getenv("USER")
 
 table.insert(lvim.plugins,
   {
@@ -32,13 +42,18 @@ table.insert(lvim.plugins,
       { "nvim-lua/plenary.nvim" },
     },
     opts = {
-      question_header = "## User ",
-      answer_header = "## Copilot ",
-      error_header = "## Error ",
+      debug = false,
+      model = 'gpt-4',
+      temperature = 0.1,
+      question_header = " " .. username .. " ",
+      answer_header = " Copilot ",
+      error_header = " Error ",
+      separator = '───',
       prompts = prompts,
-      auto_follow_cursor = false, -- Don't follow the cursor after getting response
-      show_help = false,          -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
+      auto_follow_cursor = true, -- Don't follow the cursor after getting response
+      show_help = false,         -- Show help in virtual text, set to true if that's 1st time using Copilot Chat
       mappings = {
+
         -- Use tab for completion
         complete = {
           detail = "Use @<Tab> or /<Tab> for options.",
@@ -82,6 +97,7 @@ table.insert(lvim.plugins,
         },
       },
     },
+
     config = function(_, opts)
       local chat = require("CopilotChat")
       local select = require("CopilotChat.select")
@@ -152,7 +168,7 @@ table.insert(lvim.plugins,
         { "<leader>gms", desc = "Show selection" },
         { "<leader>gmy", desc = "Yank diff" },
       })
-      ]]--
+      ]] --
     end,
     event = "VeryLazy",
     keys = {
@@ -205,7 +221,7 @@ table.insert(lvim.plugins,
         function()
           local input = vim.fn.input("Ask Copilot: ")
           if input ~= "" then
-            vim.cmd("CopilotChat " .. input)
+            vim.cmd(get_prompt("CopilotChat " .. input))
           end
         end,
         desc = "CopilotChat - Ask input",
@@ -227,7 +243,7 @@ table.insert(lvim.plugins,
         function()
           local input = vim.fn.input("Quick Chat: ")
           if input ~= "" then
-            vim.cmd("CopilotChatBuffer " .. input)
+            vim.cmd(get_prompt("CopilotChatBuffer " .. input))
           end
         end,
         desc = "CopilotChat - Quick chat",
