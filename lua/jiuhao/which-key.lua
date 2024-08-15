@@ -14,7 +14,8 @@ local personal_keybindings = {
     h = { "<cmd>nohlsearch<cr>", "No Highlight" },
     t = { "<cmd>lua require 'lvim.core.terminal' .htop_toggle()<cr>", "Htop Toggle" },
     d = { "<cmd>lua require 'lvim.core.terminal' .lazydocker_toggle()<cr>", "LazyDocker Toggle" },
-    n = { "<cmd>lua require 'lvim.core.terminal' .ncdu_toggle()<cr>" ,"Ncdu Toggle"}
+    n = { "<cmd>lua require 'lvim.core.terminal' .ncdu_toggle()<cr>", "Ncdu Toggle" },
+    f = { "<cmd>TodoLocList<cr>", "TodoList" },
   },
   t = {
     name = "LaTex",
