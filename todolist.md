@@ -9,7 +9,7 @@
     XXXX: tmux-nvim?
     DONE: aerial?
     DONE: ftplugin:filetype plugin
-    PERF: copilot-cmp: at the head of line,how to set the cmp trigger?
+    DONE: copilot
     DONE: terminal slow?
     TODO: dap/navigate-virtual-text
     TODO: markdown preview
@@ -23,4 +23,5 @@
     PERF: tex lsp: how to make it live
     PERF: tex preview delete manage
     DONE: htop,lazydocker,ncdu toggle
+    TODO: tmux vimtest,
 -->
