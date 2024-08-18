@@ -7,8 +7,9 @@
 require("jiuhao.copilot-directly")
 require("jiuhao.copilot-chat")
 require("jiuhao.which-key")
---require("jiuhao.noice")
+require("jiuhao.noice")
 require("jiuhao.keybindings")
+require("jiuhao.builtin_config")
 --require("jiuhao.possession")
 --require("jiuhao.lspsaga")
 --require("jiuhao.symbols-outline")
@@ -24,3 +25,5 @@ require("jiuhao.tex")
 --require("jiuhao.cmp-vimtex")
 
 require("jiuhao.terminal")
+
+require("jiuhao.pythonenv")
