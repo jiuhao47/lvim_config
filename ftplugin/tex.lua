@@ -1,3 +1,5 @@
+vim.wo.wrap = true
+
 lvim.builtin.which_key.mappings["t"] =
 {
   name = "LaTex",
