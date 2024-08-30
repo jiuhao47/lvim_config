@@ -6,7 +6,7 @@
     PERF: neovim-session-manager:keybinding
     PERF: keybindings
     PERF: ui_beauty
-    XXXX: tmux-nvim?
+    DONE: tmux-nvim?
     DONE: aerial?
     DONE: ftplugin:filetype plugin
     DONE: copilot
