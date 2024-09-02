@@ -23,6 +23,7 @@ require("jiuhao.auto-save")
 require("jiuhao.tex")
 require("jiuhao.sql")
 require("jiuhao.sage")
+--require("jiuhao.glow")
 --require("jiuhao.cmp-vimtex")
 
 require("jiuhao.terminal")
