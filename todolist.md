@@ -23,5 +23,6 @@
     PERF: tex lsp: how to make it live
     PERF: tex preview delete manage
     DONE: htop,lazydocker,ncdu toggle
-    TODO: tmux vimtest,
+    DONE: tmux 
+    TODO: vimtest,
 -->

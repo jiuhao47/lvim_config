@@ -17,6 +17,7 @@ local personal_keybindings = {
     n = { "<cmd>lua require 'lvim.core.terminal' .ncdu_toggle()<cr>", "Ncdu Toggle" },
     f = { "<cmd>TodoLocList<cr>", "TodoList" },
     m = { "<cmd>NoiceHistory<cr>", "Message History" },
+    w = { "<cmd>set wrap!<cr>", "Toggle Wrap"},
   },
 }
 
